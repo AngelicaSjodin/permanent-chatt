@@ -25,7 +25,7 @@ public class ChatController {
     }
 
     //hämtar ut all chat
-    @GetMapping("/ok")
+    @GetMapping()
     public List<Chat> getAllChat(){
         return chatService.getAllChat();
     }

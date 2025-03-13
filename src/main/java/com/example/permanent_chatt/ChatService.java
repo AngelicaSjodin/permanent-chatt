@@ -29,10 +29,7 @@ public class ChatService {
 
 
 
-//        public List<ProductDTO>getAllProducts(){
-//            List<Product> products= repo.findAll();
-//            //för varje p/prodduct i listan använder vi mapper
-//            return products.stream().map(p -> ProductMapper.INSTANCE.productToProductDTO(p)).collect(Collectors.toList());
+//
 
     }
 
