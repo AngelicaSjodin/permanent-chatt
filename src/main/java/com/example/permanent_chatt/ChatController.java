@@ -26,12 +26,14 @@ public class ChatController {
 
     //hämtar ut all chat
     @GetMapping()
-    public List<Chat> getAllChat(){
+    public List<ChatDTO> getAllChat(){
         return chatService.getAllChat();
     }
 
-
-
-
+    //tar bort
+    @DeleteMapping("/{id}")
+    public void deleteChatById(@PathVariable Long id){
+        chatService.deleteChat(id);
+    }
 
 }
