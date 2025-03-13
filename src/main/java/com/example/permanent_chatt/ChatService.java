@@ -22,17 +22,17 @@ public class ChatService {
         return repo.save(chat);
     }
 
-    public List<Chat> getAllChat(){
+    //se all chat
+    public List<ChatDTO> getAllChat(){
         List<Chat> chats=repo.findAll();
         //för varje c/chat i listan använder vi mappen
-        return chats.stream().map(c -> ChatMapper.INSTANCE.chatToChat(c)).collect(Collectors.toList());
-
-
-
-//
-
+        return chats.stream().map(c -> ChatMapper.INSTANCE.chatToChatDTO(c)).collect(Collectors.toList());
     }
 
-
-
+    //ta bort en chat
+    public void deleteChat(Long id){
+        repo.deleteById(id);
+    }
 }
+
+

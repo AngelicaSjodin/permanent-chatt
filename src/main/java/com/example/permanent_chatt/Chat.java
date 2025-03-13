@@ -12,6 +12,7 @@ public class Chat {
 
     String text;
 
+
     //set and get ^
     public Long getId() {
         return id;
