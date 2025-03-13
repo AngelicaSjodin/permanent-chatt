@@ -33,4 +33,12 @@ public class Chat {
     public Chat(){
     }
 
+    @Override
+    public String toString() {
+        return "Chat{" +
+                "text='" + text + '\'' +
+                ", id=" + id +
+                '}';
+    }
+
 }
