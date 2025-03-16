@@ -7,6 +7,8 @@ public class ChatDTO {
 
     private String text;
 
+    private String channelName;
+
     //get set
     public Long getId() {
         return id;
@@ -22,6 +24,14 @@ public class ChatDTO {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getChannelName() {
+        return channelName;
+    }
+
+    public void setChannelName(String channelName) {
+        this.channelName = channelName;
     }
 }
 

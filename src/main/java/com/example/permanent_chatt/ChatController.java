@@ -17,8 +17,14 @@ public class ChatController {
         this.chatService=chatService;
     }
 
+    //hämtar chat från channel id
+    @GetMapping("/channel/{channelId}")
+    public ResponseEntity<List<ChatDTO>> getChatbyChannelId(@PathVariable Long channelId){
+
+    }
+
     //skickar upp chat
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<Chat> createChatByRequestBody(@Valid @RequestBody Chat chat){
         Chat result = chatService.addChat(chat);
         return ResponseEntity.ok(result);
