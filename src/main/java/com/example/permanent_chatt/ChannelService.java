@@ -23,6 +23,11 @@ public class ChannelService {
         return channelRepository.findAll();
     }
 
+    //ta bort channel
+    public void deleteChannel(Long id){
+        channelRepository.deleteById(id);
+    }
+
 }
 
 

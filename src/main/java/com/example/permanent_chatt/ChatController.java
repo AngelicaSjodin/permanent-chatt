@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/Chat")
+@RequestMapping("/chat")
 @RestController
 
 
 public class ChatController {
-    ChatService chatService;
+    private ChatService chatService;
     @Autowired
     public ChatController(ChatService chatService){
         this.chatService=chatService;
@@ -19,8 +19,12 @@ public class ChatController {
 
     //hämtar chat från channel id
     @GetMapping("/channel/{channelId}")
-    public ResponseEntity<List<ChatDTO>> getChatbyChannelId(@PathVariable Long channelId){
-
+    public ResponseEntity<List<ChatDTO>> getChatByChannelId(@PathVariable Long channelId){
+        List<ChatDTO> chatDTOs = chatService.getChatByChannelId(channelId);
+        if (chatDTOs.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(chatDTOs);
     }
 
     //skickar upp chat

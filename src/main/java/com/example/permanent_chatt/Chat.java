@@ -10,7 +10,7 @@ public class Chat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    String text;
+    private String text;
 
 
     //set and get ^

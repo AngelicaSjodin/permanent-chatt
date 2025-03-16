@@ -16,16 +16,24 @@ public class ChannelController {
         this.channelService = channelService;
     }
 
-    //da things
+    //da methods
+    //hämta
     @GetMapping
     public ResponseEntity<List<Channel>> getAllChannels(){
         return ResponseEntity.ok(channelService.getAllChannels());
 }
-
+    //skapa
     @PostMapping
     public ResponseEntity<Channel> createChannel(@RequestBody Channel channel){
         return ResponseEntity.ok(channelService.createChannel(channel));
     }
+
+    //tar bort
+    @DeleteMapping("/{id}")
+    public void deleteChannelById(@PathVariable Long id){
+        channelService.deleteChannel(id);
+    }
+
 }
 
 
