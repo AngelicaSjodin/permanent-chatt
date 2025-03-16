@@ -18,6 +18,7 @@ public class ChatController {
     }
 
     //hämtar chat från channel id
+    // http://localhost:8080/chat/channel/*idSiffra* i postman
     @GetMapping("/channel/{channelId}")
     public ResponseEntity<List<ChatDTO>> getChatByChannelId(@PathVariable Long channelId){
         List<ChatDTO> chatDTOs = chatService.getChatByChannelId(channelId);
@@ -27,20 +28,32 @@ public class ChatController {
         return ResponseEntity.ok(chatDTOs);
     }
 
-    //skickar upp chat
+    //skickar upp chat till kanal
+    // http://localhost:8080/chat i postman
+    //{
+    //  "text": "...",
+    //  "sender":"...",
+    //  "channel": {
+    //    "id": ...
+    //  }
+    //}
+
     @PostMapping()
     public ResponseEntity<Chat> createChatByRequestBody(@Valid @RequestBody Chat chat){
         Chat result = chatService.addChat(chat);
         return ResponseEntity.ok(result);
     }
 
-    //hämtar ut all chat
+
+    //för att hämta all chatt som skrivits
+    //hämtar ut all chat // http://localhost:8080/chat
     @GetMapping()
     public List<ChatDTO> getAllChat(){
         return chatService.getAllChat();
     }
 
-    //tar bort
+    //tar bort en chat
+    //http://localhost:8080/chat/*idSiffra*
     @DeleteMapping("/{id}")
     public void deleteChatById(@PathVariable Long id){
         chatService.deleteChat(id);
