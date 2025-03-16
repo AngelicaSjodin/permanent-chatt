@@ -17,18 +17,21 @@ public class ChannelController {
     }
 
     //da methods
-    //hämta
+    //hämta channels
+    // http://localhost:8080/channel
     @GetMapping
     public ResponseEntity<List<Channel>> getAllChannels(){
         return ResponseEntity.ok(channelService.getAllChannels());
 }
     //skapa
+    // http://localhost:8080/channel
     @PostMapping
     public ResponseEntity<Channel> createChannel(@RequestBody Channel channel){
         return ResponseEntity.ok(channelService.createChannel(channel));
     }
 
     //tar bort
+    // http://localhost:8080/channel/*id*
     @DeleteMapping("/{id}")
     public void deleteChannelById(@PathVariable Long id){
         channelService.deleteChannel(id);

@@ -7,9 +7,20 @@ public class ChatDTO {
 
     private String text;
 
-    private String channelName;
+    private String sender;
 
-    //get set
+    private String channelTitle;
+
+    //get set ^
+
+    public String getSender() {
+        return sender;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
     public Long getId() {
         return id;
     }
@@ -26,12 +37,12 @@ public class ChatDTO {
         this.text = text;
     }
 
-    public String getChannelName() {
-        return channelName;
+    public String getChannelTitle() {
+        return channelTitle;
     }
 
-    public void setChannelName(String channelName) {
-        this.channelName = channelName;
+    public void setChannelTitle(String channelTitle) {
+        this.channelTitle = channelTitle;
     }
 }
 

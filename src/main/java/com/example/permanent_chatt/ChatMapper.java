@@ -9,7 +9,7 @@ public interface ChatMapper {
     //skapar upp singelton åt oss
     ChatMapper INSTANCE = Mappers.getMapper(ChatMapper.class);
 
-    @Mapping(source = "channel.name",target ="channelName")
+    @Mapping(source = "channel.title",target ="channelTitle")
 
     public ChatDTO chatToChatDTO(Chat chat);
 //    public Chat chatDTOToChat(ChatDTO chatDTO);

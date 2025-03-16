@@ -13,7 +13,7 @@ public class Channel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    String name;
+    String title;
 
     @JsonIgnore
     @OneToMany(mappedBy = "channel",cascade = CascadeType.ALL)
@@ -32,12 +32,12 @@ public class Channel {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public List<Chat> getChats() {

@@ -12,6 +12,8 @@ public class Chat {
 
     private String text;
 
+    private String sender;
+
 
     //set and get ^
     public Long getId() {
@@ -28,6 +30,14 @@ public class Chat {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getSender() {
+        return sender;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
     }
 
     //tom constructor
@@ -50,7 +60,8 @@ public class Chat {
     public String toString() {
         return "Chat{" +
                 "text='" + text + '\'' +
-                ", id=" + id +
+                ", id=" + id + '\'' +
+                ", sender=" + sender +
                 '}';
     }
 
