@@ -34,6 +34,18 @@ public class Chat {
     public Chat(){
     }
 
+    //koppling till channels
+    @ManyToOne
+    @JoinColumn(name = "channel_id")
+    private Channel channel;
+    //get set^
+    public Channel getChannel() {
+        return channel;
+    }
+    public void setChannel(Channel channel) {
+        this.channel = channel;
+    }
+
     @Override
     public String toString() {
         return "Chat{" +
